@@ -16,6 +16,19 @@ st.set_page_config(
 )
 
 
+from pathlib import Path
+import joblib
+
+BASE_DIR = Path(__file__).resolve().parent
+
+model = joblib.load(
+    BASE_DIR / "sentiment_model.pkl"
+)
+
+vectorizer = joblib.load(
+    BASE_DIR / "tfidf_vectorizer.pkl"
+)
+
 # -----------------------------
 # Load model
 # -----------------------------
